@@ -1,6 +1,4 @@
-# PAGE PULSE — Build Spec for Antigravity
-
-You are building "Page Pulse," a URL health-audit tool. Read this entire spec before writing any code. Follow it precisely — every detail here is intentional, not a suggestion.
+building "Page Pulse," a URL health-audit tool. Read this entire spec before writing any code. Follow it precisely — every detail here is intentional, not a suggestion.
 
 ---
 
