@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Pulse</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Serif:wght@500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <main>
+        <div class="wordmark">Page Pulse</div>
+
+        <!-- Intake Screen -->
+        <div id="intake-screen" class="intake-container">
+            <form id="audit-form" class="intake-form">
+                <input type="url" id="url-input" class="input-field" placeholder="https://example.com" required autocomplete="off" spellcheck="false">
+                <button type="submit" class="primary-button">Run pulse</button>
+            </form>
+            <p class="instruction-text">Paste any public URL to run a pulse check.</p>
+        </div>
+
+        <!-- Loading Screen -->
+        <div id="loading-screen" class="loading-container">
+            <div class="pulse-animation-wrapper" id="loading-pulse-wrapper">
+                <!-- SVG inserted via JS -->
+            </div>
+            <p id="loading-status" class="loading-status">Scanning...</p>
+        </div>
+
+        <!-- Error Screen -->
+        <div id="error-screen" class="error-container">
+            <p id="error-message" class="error-message"></p>
+            <button id="reset-button-error" class="primary-button">Try another URL</button>
+        </div>
+
+        <!-- Report Screen -->
+        <div id="report-screen" class="report-container">
+            <div class="report-header">
+                <div class="report-pulse-strip" id="report-pulse-wrapper">
+                    <!-- SVG inserted via JS -->
+                </div>
+                <div id="report-url" class="report-url"></div>
+                <div id="report-timestamp" class="report-timestamp"></div>
+            </div>
+
+            <div class="chart-section">
+                <h2 class="section-title">Vitals</h2>
+                
+                <div class="chart-row">
+                    <span class="row-label">Status</span>
+                    <div class="row-value-wrapper">
+                        <span id="val-status" class="val-text"></span>
+                        <div id="dot-status" class="status-dot"></div>
+                    </div>
+                </div>
+                
+                <div class="chart-row">
+                    <span class="row-label">Response Time</span>
+                    <div class="row-value-wrapper">
+                        <span id="val-time" class="val-text"></span>
+                        <div id="dot-time" class="status-dot"></div>
+                    </div>
+                </div>
+                
+                <div class="chart-row">
+                    <span class="row-label">Content Type</span>
+                    <div class="row-value-wrapper">
+                        <span id="val-type" class="val-text"></span>
+                        <div id="dot-type" class="status-dot"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chart-section">
+                <h2 class="section-title">Findings</h2>
+                
+                <div class="chart-row">
+                    <span class="row-label">Title</span>
+                    <div class="row-value-wrapper">
+                        <span id="val-title" class="val-text"></span>
+                        <div id="dot-title" class="status-dot"></div>
+                    </div>
+                </div>
+                
+                <div class="chart-row">
+                    <span class="row-label">Meta Description</span>
+                    <div class="row-value-wrapper">
+                        <span id="val-meta" class="val-text"></span>
+                        <div id="dot-meta" class="status-dot"></div>
+                    </div>
+                </div>
+                
+                <div class="chart-row">
+                    <span class="row-label">H1 Count</span>
+                    <div class="row-value-wrapper">
+                        <span id="val-h1" class="val-text"></span>
+                        <div id="dot-h1" class="status-dot"></div>
+                    </div>
+                </div>
+                
+                <div class="chart-row">
+                    <span class="row-label">Missing Alt Text</span>
+                    <div class="row-value-wrapper">
+                        <span id="val-alt" class="val-text"></span>
+                        <div id="dot-alt" class="status-dot"></div>
+                    </div>
+                </div>
+                
+                <div class="chart-row">
+                    <span class="row-label">Word Count</span>
+                    <div class="row-value-wrapper">
+                        <span id="val-words" class="val-text"></span>
+                        <div id="dot-words" class="status-dot"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <button id="reset-button-success" class="primary-button" style="margin-top: 1rem;">Run another pulse</button>
+        </div>
+    </main>
+
+    <footer>
+        <a href="https://digitalheroesco.com" target="_blank" rel="noopener">Built for Digital Heroes Training Task</a>
+    </footer>
+
+    <script src="/app.js"></script>
+</body>
+</html>
